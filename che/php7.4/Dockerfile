@@ -28,6 +28,7 @@ RUN apt-get -y update \
 #add composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 ADD https://github.com/symfony/cli/releases/download/v4.12.8/symfony_linux_amd64.gz /usr/local/bin/symfony
+RUN chmod +x /usr/local/bin/symfony
 WORKDIR /projects
 
 CMD sleep infinity
